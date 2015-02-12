@@ -20,7 +20,7 @@ import java.util.Calendar;
 import java.util.TimeZone;
 import android.content.Intent;
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends ActionBarActivity implements View.OnClickListener {
 
     Button insertButton;
     long calenderID;
