@@ -27,7 +27,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="#fffcff12"
-        style="@style/Base.TextAppearance.AppCompat" />
+        style="@style/Base.TextAppearance.AppCompat.Menu" />
 
     <Button
         android:layout_width="wrap_content"
@@ -38,6 +38,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="#ff3254ff"
-        style="@android:style/ButtonBar" />
+        style="@style/Base.TextAppearance.AppCompat.Menu" />
 
 </RelativeLayout>
