@@ -20,6 +20,20 @@ import java.util.Calendar;
 import java.util.TimeZone;
 import android.content.Intent;
 
+import  java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+
+import android.os.AsyncTask;
+import android.os.Bundle;
+
+import android.widget.TextView;
+
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
 
     Button insertButton;
