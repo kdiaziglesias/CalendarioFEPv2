@@ -42,7 +42,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     Button insertButton;
     long calenderID;
     long eventID;
-private WebView mWebView;
+//private WebView mWebView;
 
 
 
@@ -53,17 +53,17 @@ private WebView mWebView;
 
         insertButton=(Button)this.findViewById(R.id.buttonInsertEvent);
         insertButton.setOnClickListener(this);
-        mWebView= (WebView) findViewById(R.id.activity_main_webview);
+        //mWebView= (WebView) findViewById(R.id.activity_main_webview);
 
-        WebSettings webSettings = mWebView.getSettings();
+      /*  WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         mWebView.loadUrl("http://www.fegapi.org/");
         mWebView.setWebViewClient(new WebViewClient());
-        mWebView.setWebViewClient(new MyAppWebViewClient());
+        mWebView.setWebViewClient(new MyAppWebViewClient());*/
 
     }
 
-    public void onBackPressed(){
+    /*public void onBackPressed(){
 
         if(mWebView.canGoBack()){
 
@@ -75,7 +75,7 @@ private WebView mWebView;
 
         }
 
-    }
+    }*/
 
 
     @Override
