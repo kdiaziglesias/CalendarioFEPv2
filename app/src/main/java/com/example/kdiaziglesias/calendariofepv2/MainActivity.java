@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -39,8 +42,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     Button insertButton;
     long calenderID;
     long eventID;
+private WebView mWebView;
 
-    private TextView textView;
 
 
     @Override
@@ -50,7 +53,28 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         insertButton=(Button)this.findViewById(R.id.buttonInsertEvent);
         insertButton.setOnClickListener(this);
-        textView = (TextView) findViewById(R.id.TextView01);
+        mWebView= (WebView) findViewById(R.id.activity_main_webview);
+
+        WebSettings webSettings = mWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        mWebView.loadUrl("http://www.fegapi.org/");
+        mWebView.setWebViewClient(new WebViewClient());
+        mWebView.setWebViewClient(new MyAppWebViewClient());
+
+    }
+
+    public void onBackPressed(){
+
+        if(mWebView.canGoBack()){
+
+            mWebView.goBack();
+
+        }else {
+
+            super.onBackPressed();
+
+        }
+
     }
 
 
@@ -78,12 +102,12 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+
         addEvent();
         addEventUsingIntent();
         addAttendee();
         addReminder();
-        DownloadWebPageTask task = new DownloadWebPageTask();
-        task.execute(new String[] { "http://www.fegapi.org/" });
+
     }
 
     private void addEvent(){
@@ -168,35 +192,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         this.getContentResolver().insert(CalendarContract.Reminders.CONTENT_URI,values);
 
     }
-    private class DownloadWebPageTask extends AsyncTask<String, Void, String> {
-        @Override
-        protected String doInBackground(String... urls) {
-            String response = "";
-            for (String url : urls) {
-                DefaultHttpClient client = new DefaultHttpClient();
-                HttpGet httpGet = new HttpGet(url);
-                try {
-                    HttpResponse execute = client.execute(httpGet);
-                    InputStream content = execute.getEntity().getContent();
 
-                    BufferedReader buffer = new BufferedReader(new InputStreamReader(content));
-                    String s = "";
-                    while ((s = buffer.readLine()) != null) {
-                        response += s;
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-            return response;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            textView.setText(result);
-        }
-    }
 
 
 
