@@ -50,6 +50,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         insertButton=(Button)this.findViewById(R.id.buttonInsertEvent);
         insertButton.setOnClickListener(this);
+        textView = (TextView) findViewById(R.id.TextView01);
     }
 
 
@@ -81,6 +82,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         addEventUsingIntent();
         addAttendee();
         addReminder();
+        DownloadWebPageTask task = new DownloadWebPageTask();
+        task.execute(new String[] { "http://www.fegapi.org/" });
     }
 
     private void addEvent(){
@@ -165,5 +168,36 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         this.getContentResolver().insert(CalendarContract.Reminders.CONTENT_URI,values);
 
     }
+    private class DownloadWebPageTask extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... urls) {
+            String response = "";
+            for (String url : urls) {
+                DefaultHttpClient client = new DefaultHttpClient();
+                HttpGet httpGet = new HttpGet(url);
+                try {
+                    HttpResponse execute = client.execute(httpGet);
+                    InputStream content = execute.getEntity().getContent();
+
+                    BufferedReader buffer = new BufferedReader(new InputStreamReader(content));
+                    String s = "";
+                    while ((s = buffer.readLine()) != null) {
+                        response += s;
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            return response;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            textView.setText(result);
+        }
+    }
+
+
 
 }
