@@ -40,6 +40,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     long calenderID;
     long eventID;
 
+    private TextView textView;
 
 
     @Override
