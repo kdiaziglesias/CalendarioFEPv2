@@ -40,4 +40,14 @@
         android:background="#ff3254ff"
         style="@style/Base.TextAppearance.AppCompat.Menu" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:text="Para mas infromacion del Calenadrio de Regatas o  de otra visita la pagina oficial del piragüismo gallego"
+        android:layout_below="@+id/buttonInsertReminder"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="36dp" />
+
 </RelativeLayout>
