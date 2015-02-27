@@ -5,4 +5,10 @@
         <!-- Customize your theme here. -->
     </style>
 <!--item name="android:windowNoTitle">true</item-->
+
+    <!-- INI AGREGADO -->
+    <!-- Ocultamos la barra de titulo -->
+    <item name="android:windowNoTitle">true</item>
+    <!-- FIN AGREGADO -->
+
 </resources>

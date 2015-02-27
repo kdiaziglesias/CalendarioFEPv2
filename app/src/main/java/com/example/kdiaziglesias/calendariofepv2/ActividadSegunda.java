@@ -5,15 +5,45 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 
 public class ActividadSegunda extends ActionBarActivity {
 
+
+    private WebView mWebView;
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_segunda);
+        mWebView = (WebView)findViewById(R.id.doswebview);
+        WebSettings webSettings = mWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        mWebView.loadUrl("http://www.fegapi.org");
+        mWebView.setWebViewClient(new WebViewClient());
+        mWebView.setWebViewClient(new MyAppWebViewClient());
+    }
+
+    public void onBackPressed(){
+
+
+        if(mWebView.canGoBack()){
+
+            mWebView.goBack();
+
+        }else{
+            super.onBackPressed();
+
+        }
+
+
     }
 
 
