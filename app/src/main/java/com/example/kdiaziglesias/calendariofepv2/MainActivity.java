@@ -1,6 +1,7 @@
 package com.example.kdiaziglesias.calendariofepv2;
 
 import android.app.Activity;
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -36,6 +37,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
 
@@ -53,29 +55,19 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         insertButton=(Button)this.findViewById(R.id.buttonInsertEvent);
         insertButton.setOnClickListener(this);
-        //mWebView= (WebView) findViewById(R.id.activity_main_webview);
+        Button miboton = (Button) findViewById(R.id.Bfegapi);
 
-      /*  WebSettings webSettings = mWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        mWebView.loadUrl("http://www.fegapi.org/");
-        mWebView.setWebViewClient(new WebViewClient());
-        mWebView.setWebViewClient(new MyAppWebViewClient());*/
+        miboton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent intento = new Intent(MainActivity.this,ActividadSegunda.class);
+                startActivityForResult(intento,1);
+            }
+        });
     }
 
-    /*public void onBackPressed(){
 
-        if(mWebView.canGoBack()){
-
-            mWebView.goBack();
-
-        }else {
-
-            super.onBackPressed();
-
-        }
-
-    }*/
 
 
     @Override
@@ -193,7 +185,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     }
 
+    public void showToast(String msg){
 
+        Context contexto = getApplicationContext();
+        int duracion = Toast.LENGTH_SHORT;
+        Toast tostada = Toast.makeText(contexto,msg,duracion);
+        tostada.show();
+    }
 
 
 }
