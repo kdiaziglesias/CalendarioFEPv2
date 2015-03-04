@@ -1,37 +1,31 @@
 package com.example.kdiaziglesias.calendariofepv2;
 
-import android.app.Activity;
+import android.content.ContentUris;
+import android.content.ContentValues;
 import android.content.Context;
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.CalendarContract;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.Button;
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.os.Bundle;
-import android.content.ContentUris;
-import android.net.Uri;
-import android.provider.CalendarContract;
-import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
+
 import java.util.Calendar;
 import java.util.TimeZone;
-import android.content.Intent;
-
-
-import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
 
     Button insertButton;
     long calenderID;
     long eventID;
+    //Button AttendeeButton;
+   // Button RemiderButton;
 //private WebView mWebView;
 
 
@@ -43,6 +37,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         insertButton=(Button)this.findViewById(R.id.buttonInsertEvent);
         insertButton.setOnClickListener(this);
+       /* AttendeeButton=(Button)this.findViewById(R.id.buttonInsertAttendee);
+        AttendeeButton.setOnClickListener(this);
+        RemiderButton=(Button)this.findViewById(R.id.buttonInsertReminder);
+        RemiderButton.setOnClickListener(this);*/
         Button miboton = (Button) findViewById(R.id.Bfegapi);
 
         miboton.setOnClickListener(new OnClickListener() {
