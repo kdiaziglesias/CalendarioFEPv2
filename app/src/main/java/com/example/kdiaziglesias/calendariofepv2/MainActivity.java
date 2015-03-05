@@ -26,7 +26,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     long eventID;
     //Button AttendeeButton;
    // Button RemiderButton;
-//private WebView mWebView;
+    //private WebView mWebView;
 
 
 
