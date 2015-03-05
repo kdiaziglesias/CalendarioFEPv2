@@ -58,8 +58,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         Esboton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intento = new Intent(MainActivity.this,Pagina_Refp.class);
-                startActivityForResult(intento,1);
+                Intent intento2;
+                intento2 = new Intent(MainActivity.this,Pagina_Refp.class);
+                startActivityForResult(intento2,1);
 
             }
         });
