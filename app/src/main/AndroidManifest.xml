@@ -10,7 +10,13 @@
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-
+    <android:uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
 
     <application
         android:allowBackup="true"
@@ -30,9 +36,19 @@
             android:name=".ActividadSegunda"
             android:label="@string/title_activity_actividad_segunda" >
         </activity>
-        <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
+
+        <android:uses-permission
+            android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+            android:maxSdkVersion="18" />
         <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-        <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
+        <android:uses-permission
+            android:name="android.permission.READ_EXTERNAL_STORAGE"
+            android:maxSdkVersion="18" />
+
+        <activity
+            android:name=".Pagina_Refp"
+            android:label="@string/title_activity_pagina__refp" >
+        </activity>
     </application>
 
 </manifest>

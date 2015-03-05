@@ -51,6 +51,22 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 startActivityForResult(intento,1);
             }
         });
+
+
+        Button Esboton = (Button) findViewById(R.id.Brfep);
+
+        Esboton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intento = new Intent(MainActivity.this,Pagina_Refp.class);
+                startActivityForResult(intento,1);
+
+            }
+        });
+
+
+
+
     }
 
 
