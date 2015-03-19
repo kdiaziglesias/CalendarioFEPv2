@@ -7,4 +7,5 @@
     <string name="title_activity_pagina__refp">Pagina_Refp</string>
     <string name="attendee">atecion</string>
     <string name="reminder">recordar</string>
+    <string name="title_activity_juegode_colocacion">JuegodeColocacion</string>
 </resources>

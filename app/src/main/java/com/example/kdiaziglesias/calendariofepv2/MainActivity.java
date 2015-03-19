@@ -88,6 +88,20 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             }
         });
 
+        Button juego = (Button) findViewById(R.id.bjuego);
+
+        juego.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intento3 = new Intent(MainActivity.this,JuegodeColocacion.class);
+                startActivityForResult(intento3,1);
+
+
+            }
+        });
+
+
     }
 
 
