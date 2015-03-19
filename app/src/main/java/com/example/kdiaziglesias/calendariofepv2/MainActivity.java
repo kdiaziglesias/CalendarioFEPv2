@@ -65,10 +65,34 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             }
         });
 
+        Button batencion = (Button) findViewById(R.id.buttonInsertAttendee);
+        Button brecodar = (Button) findViewById(R.id.buttonInsertReminder);
 
+        batencion.setOnClickListener(new OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+
+            showToast("En Proceso....");
+
+            }
+        });
+
+        brecodar.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                showToast("En Proceso....");
+
+            }
+        });
 
     }
+
+
+
+
 
 
 
