@@ -33,17 +33,16 @@
         android:layout_height="wrap_content"
         android:id="@+id/buttonInsertReminder"
         android:text="Recordatorio"
-        android:layout_below="@+id/buttonInsertAttendee"
+        style="@style/Base.TextAppearance.AppCompat.Menu"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        style="@style/Base.TextAppearance.AppCompat.Menu" />
+        android:layout_below="@+id/buttonInsertAttendee" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="FEGAPI"
         android:id="@+id/Bfegapi"
-        android:layout_marginTop="45dp"
         android:layout_below="@+id/buttonInsertReminder"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -54,10 +53,9 @@
         android:text="Para mas infromacion del Calenadrio de Regatas o  de otra visita la pagina oficial del Piragüismo gallego(www.fegapi.org)"
         android:id="@+id/textView"
         android:textColor="#e401010c"
-        android:layout_marginTop="37dp"
         android:layout_below="@+id/Bfegapi"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
