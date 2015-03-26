@@ -7,6 +7,11 @@
     android:background="@mipmap/escudo"
     style="@style/AppTheme">
 
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/horizontalScrollView" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -84,6 +89,7 @@
         android:layout_marginTop="30dp"
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true" />
+
 
 
 </RelativeLayout>

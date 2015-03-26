@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/imageView11"
             android:src="@drawable/alfonso1"
-            android:layout_gravity="center_horizontal|top"/>
+            />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -98,6 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView0"
+            android:src="@drawable/barco"
             />
     </LinearLayout>
 
